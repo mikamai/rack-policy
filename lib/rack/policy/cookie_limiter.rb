@@ -43,7 +43,7 @@ module Rack
         accepts?(request)
         @status, @headers, @body = @app.call(env)
         response = Rack::Response.new body, status, headers
-        clear_cookies!(request, response) unless allowed?(request)
+        # clear_cookies!(request, response) unless allowed?(request)
         finish
       end
 
